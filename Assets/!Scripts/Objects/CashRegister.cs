@@ -1,9 +1,11 @@
 using UnityEngine;
 
 [RequireComponent(typeof(InteractableObject))]
-class MoneyTester : MonoBehaviour
+class CashRegister : MonoBehaviour
 {
-	void Awake()
+	private int balance = 0;
+
+	protected virtual void Awake()
 	{
 		InteractableObject interactable = GetComponent<InteractableObject>();
 		interactable.OnInteracted += InteractHandler;
@@ -12,23 +14,14 @@ class MoneyTester : MonoBehaviour
 	protected virtual void InteractHandler(InteractableObject interactWith)
 	{
 		Money money = interactWith.GetComponent<Money>();
-		if (money != null && money.valid)
+		if (money != null)
 		{
-			BeepPositive();
+			if (money.valid)
+			{
+				balance += money.balance;
+			}
+			Destroy(money.gameObject);
+			Debug.Log(balance);
 		}
-		else
-		{
-			BeepNegative();
-		}
-	}
-
-	protected virtual void BeepPositive()
-	{
-		Debug.Log("Money is valid");
-	}
-
-	protected virtual void BeepNegative()
-	{
-		Debug.Log("Money is invalid");
 	}
 }

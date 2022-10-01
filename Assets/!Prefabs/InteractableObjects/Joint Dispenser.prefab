@@ -21,7 +21,7 @@ PrefabInstance:
     - target: {fileID: 6598822784726644341, guid: 3a9fb7a8279bf228e8ae96e27fc028ac,
         type: 3}
       propertyPath: m_Name
-      value: LSD Dispenser
+      value: Joint Dispenser
       objectReference: {fileID: 0}
     - target: {fileID: 6598822784726644344, guid: 3a9fb7a8279bf228e8ae96e27fc028ac,
         type: 3}
@@ -77,6 +77,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598822784726644345, guid: 3a9fb7a8279bf228e8ae96e27fc028ac,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a9fb7a8279bf228e8ae96e27fc028ac, type: 3}

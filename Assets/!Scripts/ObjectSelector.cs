@@ -53,7 +53,7 @@ class ObjectSelector : MonoBehaviour
 	private InteractableObject _held = null;
 
 	/// <summary>
-	/// The gameobject that's currently hovered over
+	/// The gameobject that's currently held
 	/// </summary>
 	public InteractableObject held
 	{

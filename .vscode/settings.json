@@ -44,6 +44,8 @@
 		"**/*.csproj": true,
 		"**/*.controller": true,
 		"**/*.anim": true,
+		"**/*.exr": true,
+		"**/*.lighting": true,
 		"build/": true,
 		"Build/": true,
 		"Library/": true,
