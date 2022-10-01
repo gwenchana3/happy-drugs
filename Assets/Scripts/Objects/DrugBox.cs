@@ -20,7 +20,7 @@ class DrugBox : MonoBehaviour
 
 	private InteractableObject _currentDrug = null;
 
-	void Awake()
+	protected virtual void Awake()
 	{
 		InteractableObject interactable = GetComponent<InteractableObject>();
 		interactable.OnInteracted += InteractHandler;
@@ -34,11 +34,11 @@ class DrugBox : MonoBehaviour
 			InteractableObject interactable = newDrug.GetComponent<InteractableObject>();
 			interactable.OnDragged += ResetDrug;
 			interactable.isDragged = true;
-			interactable.wantedPos = transform.position + spawnOffset;
 			_currentDrug = interactable;
 		}
 		else
 		{
+			_currentDrug.wantedPos = transform.position + spawnOffset;
 			_currentDrug.transform.position = transform.position + spawnOffset;
 		}
 	}

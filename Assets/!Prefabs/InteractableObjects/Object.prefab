@@ -85,7 +85,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <interactable>k__BackingField: 1
-  draggable: 1
+  <draggable>k__BackingField: 1
+  <canRespawn>k__BackingField: 1
   isDragged: 0
   <_smoothTime>k__BackingField: 0.1
 --- !u!65 &2810954446951149164

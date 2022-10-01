@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(InteractableObject))]
 class MoneyTester : MonoBehaviour
 {
-	void Awake()
+	protected virtual void Awake()
 	{
 		InteractableObject interactable = GetComponent<InteractableObject>();
 		interactable.OnInteracted += InteractHandler;
