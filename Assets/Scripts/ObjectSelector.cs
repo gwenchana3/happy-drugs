@@ -33,11 +33,11 @@ class ObjectSelector : MonoBehaviour
 	public InteractableObject held { get; private set; } = null;
 
 	/// <summary>
-	/// The layer masks the table is part of
+	/// The physics layers objects can be dragged on
 	/// </summary>
 	[field: SerializeField]
-	[field: Tooltip("The layer masks the table is part of")]
-	protected LayerMask _tableLayers { get; private set; } = 0;
+	[field: Tooltip("The physics layers objects can be dragged on")]
+	protected LayerMask _dragLayers { get; private set; } = 0;
 
 	/// <summary>
 	/// Called once the object is instantiated
@@ -65,10 +65,9 @@ class ObjectSelector : MonoBehaviour
 		Vector3 cursorPos = _camera.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * _camera.nearClipPlane);
 		Vector3 dir = cursorPos - _camera.transform.position;
 
-
 		// Raycast
 		RaycastHit hit;
-		bool didHit = Physics.Raycast(origin, dir, out hit);
+		bool didHit = Physics.Raycast(origin, dir, out hit, float.PositiveInfinity, _dragLayers);
 
 		// hover logic
 		InteractableObject next = didHit ? hit.transform.gameObject.GetComponent<InteractableObject>() : null;
@@ -90,15 +89,12 @@ class ObjectSelector : MonoBehaviour
 			}
 		}
 
-		// drag and drop logic
-		RaycastHit hitTable;
-		bool didHitTable = Physics.Raycast(origin, dir, out hitTable, float.PositiveInfinity, _tableLayers);
 		if (held != null)
 		{
-			if (Input.GetButton("Fire1") && didHitTable)
+			if (Input.GetButton("Fire1") && didHit)
 			{
 				RaycastHit hitWorld;
-				Physics.Raycast(hitTable.point + Vector3.up * 20f, Vector3.down, out hitWorld);
+				Physics.Raycast(hit.point + Vector3.up * 20f, Vector3.down, out hitWorld);
 
 				held.wantedPos = hitWorld.point;
 			}

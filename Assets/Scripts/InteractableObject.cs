@@ -22,7 +22,6 @@ class InteractableObject : MonoBehaviour
 	[field: Tooltip("Can this object be interacted with?")]
 	public bool interactable { get; protected set; } = true;
 
-
 	/// <summary>
 	/// Can this object be dragged?
 	/// </summary>
@@ -34,6 +33,11 @@ class InteractableObject : MonoBehaviour
 	/// The position this object should move towards
 	/// </summary>
 	public Vector3 wantedPos { get; set; } = default;
+
+	/// <summary>
+	/// The position this object should respawn at
+	/// </summary>
+	public Vector3 spawnPoint { get; set; } = default;
 
 	/// <summary>
 	/// Is this object being dragged currently
@@ -59,7 +63,7 @@ class InteractableObject : MonoBehaviour
 	{
 		animator = GetComponent<Animator>();
 		rigidbody = GetComponent<Rigidbody>();
-		wantedPos = transform.position;
+		spawnPoint = transform.position;
 	}
 
 	protected virtual void Update()
@@ -68,6 +72,11 @@ class InteractableObject : MonoBehaviour
 		{
 			Vector3.SmoothDamp(transform.position, wantedPos, ref _velocity, _smoothTime);
 			rigidbody.velocity = _velocity;
+		}
+		if (transform.position.y <= 0)
+		{
+			transform.position = spawnPoint;
+			rigidbody.velocity = Vector3.zero;
 		}
 	}
 
@@ -117,7 +126,6 @@ class InteractableObject : MonoBehaviour
 	{
 		isDragged = false;
 		rigidbody.useGravity = true;
-		rigidbody.velocity = Vector3.zero;
 		_velocity = Vector3.zero;
 		foreach (Collider c in GetComponents<Collider>())
 		{
