@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8270579659301813941}
   - component: {fileID: 4185824232485321314}
   - component: {fileID: 1120480121757945129}
-  - component: {fileID: 8184794309066821173}
   m_Layer: 7
   m_Name: GEEEELD
   m_TagString: Untagged
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8184794309066821173
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7207206124759603017}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &489244972463260202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118,6 +104,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Money
+      objectReference: {fileID: 0}
+    - target: {fileID: 2810954446951149164, guid: 3f432be6d3f589f38840f6f7485f0a07,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2810954446951149164, guid: 3f432be6d3f589f38840f6f7485f0a07,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2810954446951149164, guid: 3f432be6d3f589f38840f6f7485f0a07,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2810954446951149164, guid: 3f432be6d3f589f38840f6f7485f0a07,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.005
       objectReference: {fileID: 0}
     - target: {fileID: 2810954446951149166, guid: 3f432be6d3f589f38840f6f7485f0a07,
         type: 3}
