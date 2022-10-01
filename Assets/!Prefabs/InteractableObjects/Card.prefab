@@ -91,6 +91,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2810954446951149152, guid: 3f432be6d3f589f38840f6f7485f0a07,
+        type: 3}
+      propertyPath: <draggable>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2810954446951149154, guid: 3f432be6d3f589f38840f6f7485f0a07,
         type: 3}
       propertyPath: m_Name
@@ -115,6 +120,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.y
       value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 2810954446951149166, guid: 3f432be6d3f589f38840f6f7485f0a07,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2810954446951149167, guid: 3f432be6d3f589f38840f6f7485f0a07,
         type: 3}
