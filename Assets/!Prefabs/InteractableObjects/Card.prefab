@@ -19,33 +19,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7900132986518478554, guid: 21c2131b65c187247b73d4d048d59070,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 135
-      objectReference: {fileID: 0}
-    - target: {fileID: 7900132986518478554, guid: 21c2131b65c187247b73d4d048d59070,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 135
-      objectReference: {fileID: 0}
-    - target: {fileID: 7900132986518478554, guid: 21c2131b65c187247b73d4d048d59070,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 135
-      objectReference: {fileID: 0}
-    - target: {fileID: 7900132986518478554, guid: 21c2131b65c187247b73d4d048d59070,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7900132986518478554, guid: 21c2131b65c187247b73d4d048d59070,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.025
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 7900132986518478554, guid: 21c2131b65c187247b73d4d048d59070,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.03
+      value: 0.0128
       objectReference: {fileID: 0}
     - target: {fileID: 7900132986518478554, guid: 21c2131b65c187247b73d4d048d59070,
         type: 3}
@@ -104,22 +89,22 @@ PrefabInstance:
     - target: {fileID: 2810954446951149164, guid: 3f432be6d3f589f38840f6f7485f0a07,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.3
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 2810954446951149164, guid: 3f432be6d3f589f38840f6f7485f0a07,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.05
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 2810954446951149164, guid: 3f432be6d3f589f38840f6f7485f0a07,
         type: 3}
       propertyPath: m_Size.z
-      value: 0.4
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2810954446951149164, guid: 3f432be6d3f589f38840f6f7485f0a07,
         type: 3}
       propertyPath: m_Center.y
-      value: 0.025
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2810954446951149166, guid: 3f432be6d3f589f38840f6f7485f0a07,
         type: 3}
