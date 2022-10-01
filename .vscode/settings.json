@@ -42,6 +42,8 @@
 		"**/*.prefab": true,
 		"**/*.unity": true,
 		"**/*.csproj": true,
+		"**/*.controller": true,
+		"**/*.anim": true,
 		"build/": true,
 		"Build/": true,
 		"Library/": true,
