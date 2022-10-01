@@ -154,6 +154,7 @@ class InteractableObject : MonoBehaviour
 			c.enabled = false;
 		}
 		OnDragged?.Invoke();
+		animator.SetBool("Held", true);
 	}
 
 	/// <summary>
@@ -169,5 +170,6 @@ class InteractableObject : MonoBehaviour
 			c.enabled = true;
 		}
 		OnDropped?.Invoke();
+		animator.SetBool("Held", false);
 	}
 }

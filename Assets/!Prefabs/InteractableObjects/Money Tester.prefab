@@ -1,5 +1,74 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2110049969360467813
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7068312973976971111}
+    m_Modifications:
+    - target: {fileID: 483695359361861138, guid: 30018002f8251d6439406bf47164fe13,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483695359361861138, guid: 30018002f8251d6439406bf47164fe13,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0058645546
+      objectReference: {fileID: 0}
+    - target: {fileID: 483695359361861138, guid: 30018002f8251d6439406bf47164fe13,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.000025048852
+      objectReference: {fileID: 0}
+    - target: {fileID: 483695359361861138, guid: 30018002f8251d6439406bf47164fe13,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0011731274
+      objectReference: {fileID: 0}
+    - target: {fileID: 483695359361861138, guid: 30018002f8251d6439406bf47164fe13,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 483695359361861138, guid: 30018002f8251d6439406bf47164fe13,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 483695359361861138, guid: 30018002f8251d6439406bf47164fe13,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483695359361861138, guid: 30018002f8251d6439406bf47164fe13,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483695359361861138, guid: 30018002f8251d6439406bf47164fe13,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 483695359361861138, guid: 30018002f8251d6439406bf47164fe13,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 483695359361861138, guid: 30018002f8251d6439406bf47164fe13,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 795870698242661036, guid: 30018002f8251d6439406bf47164fe13,
+        type: 3}
+      propertyPath: m_Name
+      value: FalschgeldLeser
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 30018002f8251d6439406bf47164fe13, type: 3}
 --- !u!1001 &4977943367930169608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17,10 +86,35 @@ PrefabInstance:
       propertyPath: <draggable>k__BackingField
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2810954446951149153, guid: 3f432be6d3f589f38840f6f7485f0a07,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 95a9effb7f3b37014a385150ca2301d3, type: 2}
     - target: {fileID: 2810954446951149154, guid: 3f432be6d3f589f38840f6f7485f0a07,
         type: 3}
       propertyPath: m_Name
       value: Money Tester
+      objectReference: {fileID: 0}
+    - target: {fileID: 2810954446951149164, guid: 3f432be6d3f589f38840f6f7485f0a07,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 2810954446951149164, guid: 3f432be6d3f589f38840f6f7485f0a07,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2810954446951149164, guid: 3f432be6d3f589f38840f6f7485f0a07,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2810954446951149164, guid: 3f432be6d3f589f38840f6f7485f0a07,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2810954446951149166, guid: 3f432be6d3f589f38840f6f7485f0a07,
         type: 3}
@@ -30,7 +124,7 @@ PrefabInstance:
     - target: {fileID: 2810954446951149166, guid: 3f432be6d3f589f38840f6f7485f0a07,
         type: 3}
       propertyPath: m_IsKinematic
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2810954446951149167, guid: 3f432be6d3f589f38840f6f7485f0a07,
         type: 3}
@@ -89,21 +183,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f432be6d3f589f38840f6f7485f0a07, type: 3}
---- !u!1 &7068312973976971114 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2810954446951149154, guid: 3f432be6d3f589f38840f6f7485f0a07,
+--- !u!4 &7068312973976971111 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2810954446951149167, guid: 3f432be6d3f589f38840f6f7485f0a07,
     type: 3}
   m_PrefabInstance: {fileID: 4977943367930169608}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-6251374683695062048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7068312973976971114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79f7155737b06c3d6b06c77bd89898ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
