@@ -73,7 +73,7 @@ class InteractableObject : MonoBehaviour
 			Vector3.SmoothDamp(transform.position, wantedPos, ref _velocity, _smoothTime);
 			rigidbody.velocity = _velocity;
 		}
-		if (transform.position.y <= 0)
+		if (transform.position.y < -10)
 		{
 			transform.position = spawnPoint;
 			rigidbody.velocity = Vector3.zero;
