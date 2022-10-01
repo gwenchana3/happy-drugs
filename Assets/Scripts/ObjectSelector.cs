@@ -140,7 +140,7 @@ class ObjectSelector : MonoBehaviour
 				held = null;
 			}
 		}
-		else if (current != null && fireBuffer.Active)
+		else if (current != null && current.draggable && fireBuffer.Active)
 		{
 			// grab current
 			held = current;
