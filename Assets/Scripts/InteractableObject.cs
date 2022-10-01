@@ -5,10 +5,20 @@ using UnityEngine;
 class InteractableObject : MonoBehaviour
 {
 	/// <summary>
-	/// The type of this interactable object's behaviour callbacks
+	/// The type of this interactable object's behaviour callbacks for interaction
 	/// </summary>
 	/// <param name="interactWith">The object to interact with (can be null)</param>
 	public delegate void InteractHandler(InteractableObject interactWith);
+
+	/// <summary>
+	/// The type of this interactable object's behaviour callbacks for dragging
+	/// </summary>
+	public delegate void DragHandler();
+
+	/// <summary>
+	/// The type of this interactable object's behaviour callbacks for dropping
+	/// </summary>
+	public delegate void DropHandler();
 
 	/// <summary>
 	/// Event that's run, when an object is interacted with
@@ -16,7 +26,18 @@ class InteractableObject : MonoBehaviour
 	public event InteractHandler OnInteracted;
 
 	/// <summary>
+	/// Event that's run, when an object is dragged
+	/// </summary>
+	public event DragHandler OnDragged;
+
+	/// <summary>
+	/// Event that's run, when an object is dropped
+	/// </summary>
+	public event DropHandler OnDropped;
+
+	/// <summary>
 	/// Can this object be interacted with?
+	/// TODO implement
 	/// </summary>
 	[field: SerializeField]
 	[field: Tooltip("Can this object be interacted with?")]
@@ -27,7 +48,14 @@ class InteractableObject : MonoBehaviour
 	/// </summary>
 	[field: SerializeField]
 	[field: Tooltip("Can this object be dragged?")]
-	public bool draggable = false;
+	public bool draggable { get; protected set; } = false;
+
+	/// <summary>
+	/// Can this object respawn?
+	/// </summary>
+	[field: SerializeField]
+	[field: Tooltip("Can this object respawn?")]
+	public bool canRespawn { get; protected set; } = true;
 
 	/// <summary>
 	/// The position this object should move towards
@@ -42,6 +70,7 @@ class InteractableObject : MonoBehaviour
 	/// <summary>
 	/// Is this object being dragged currently
 	/// </summary>
+	[HideInInspector]
 	public bool isDragged = false;
 
 	private Vector3 _velocity = default;
@@ -75,8 +104,15 @@ class InteractableObject : MonoBehaviour
 		}
 		if (transform.position.y < -10)
 		{
-			transform.position = spawnPoint;
-			rigidbody.velocity = Vector3.zero;
+			if (canRespawn)
+			{
+				transform.position = spawnPoint;
+				rigidbody.velocity = Vector3.zero;
+			}
+			else
+			{
+				Destroy(gameObject);
+			}
 		}
 	}
 
@@ -117,6 +153,7 @@ class InteractableObject : MonoBehaviour
 		{
 			c.enabled = false;
 		}
+		OnDragged?.Invoke();
 	}
 
 	/// <summary>
@@ -131,5 +168,6 @@ class InteractableObject : MonoBehaviour
 		{
 			c.enabled = true;
 		}
+		OnDropped?.Invoke();
 	}
 }
