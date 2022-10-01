@@ -1,0 +1,274 @@
+fileFormatVersion: 2
+guid: 589ac0c49ad6af44a9e1b8a926ce71a5
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      74: -5975941077904503911
+    second: Lighting Setup Generator|Shader NodetreeAction.001
+  - first:
+      74: -7869105290164777543
+    second: Lighting Setup Generator|Shader NodetreeAction.002
+  - first:
+      74: 9149255594846142047
+    second: Lighting Setup Generator|Shader NodetreeAction.003
+  - first:
+      74: -8433631476287533097
+    second: Lighting Setup Generator|Shader NodetreeAction.005
+  - first:
+      74: -6893831749425656266
+    second: Lighting Setup Generator|Shader NodetreeAction.006
+  - first:
+      74: 824280257186839998
+    second: Lighting Setup Generator|Shader NodetreeAction.007
+  - first:
+      74: 8785736336070819865
+    second: Lighting Setup Generator|Shader NodetreeAction.008
+  - first:
+      74: -7697794285183678988
+    second: Lighting Setup Generator|Shader NodetreeAction.009
+  - first:
+      74: 2240297074203884245
+    second: Lighting Setup Generator|Shader NodetreeAction.010
+  - first:
+      74: -8699764170345497604
+    second: Lighting Setup Generator|Shader NodetreeAction.011
+  - first:
+      74: 7665604539574205919
+    second: Lighting Setup Generator|Shader NodetreeAction.012
+  - first:
+      74: 8499975658221939884
+    second: Lighting Setup Generator|Shader NodetreeAction.014
+  - first:
+      74: 4389618417508978415
+    second: Lighting Setup Generator|Shader NodetreeAction.015
+  - first:
+      74: 8259637214597797171
+    second: Lighting Setup Generator|Shader NodetreeAction.016
+  - first:
+      74: -2979256060144290538
+    second: Lighting Setup Generator|Shader NodetreeAction.017
+  - first:
+      74: 38562833629654332
+    second: Lighting Setup Generator|Shader NodetreeAction.018
+  - first:
+      74: -2249124180224141408
+    second: Lighting Setup Generator|Shader NodetreeAction.019
+  - first:
+      74: 2352129133501024661
+    second: Lighting Setup Generator|Shader NodetreeAction.020
+  - first:
+      74: -614815757247841677
+    second: Lighting Setup Generator|Shader NodetreeAction.021
+  - first:
+      74: -7095779065160926347
+    second: Lighting Setup Generator|Shader NodetreeAction.022
+  - first:
+      74: -162228452045550746
+    second: Lighting Setup Generator|Shader NodetreeAction.023
+  - first:
+      74: -4949382127116588753
+    second: Lighting Setup Generator|Shader NodetreeAction.024
+  - first:
+      74: 7882116114389415003
+    second: Lighting Setup Generator|Shader NodetreeAction.025
+  - first:
+      74: -376703329398258833
+    second: Lighting Setup Generator|Shader NodetreeAction.026
+  - first:
+      74: -4458162312817539577
+    second: Lighting Setup Generator|Shader NodetreeAction.027
+  - first:
+      74: -7522515615572059864
+    second: Lighting Setup Generator|Shader NodetreeAction.028
+  - first:
+      74: -2135785269940119644
+    second: Lighting Setup Generator|Shader NodetreeAction.029
+  - first:
+      74: 3868276039142699621
+    second: Lighting Setup Generator|Shader NodetreeAction.030
+  - first:
+      74: 7109963090907272942
+    second: Lighting Setup Generator|Shader NodetreeAction.031
+  - first:
+      74: -2716713277119584957
+    second: Lighting Setup Generator|Shader NodetreeAction.032
+  - first:
+      74: 5635492107551243363
+    second: Lighting Setup Generator|Shader NodetreeAction.033
+  - first:
+      74: -4700443975169517623
+    second: Lighting Setup Generator|Shader NodetreeAction.034
+  - first:
+      74: 7638739123285563972
+    second: Lighting Setup Generator|Shader NodetreeAction.035
+  - first:
+      74: 4531819894222381100
+    second: Lighting Setup Generator|Shader NodetreeAction.036
+  - first:
+      74: -1235841655565189231
+    second: Lighting Setup Generator|Shader NodetreeAction.037
+  - first:
+      74: 1808028710127436643
+    second: Lighting Setup Generator|Shader NodetreeAction.038
+  - first:
+      74: 2922912441775367375
+    second: Lighting Setup Generator|Shader NodetreeAction.039
+  - first:
+      74: -2967412009491510885
+    second: Lighting Setup Generator|Shader NodetreeAction.040
+  - first:
+      74: -1441983136336895581
+    second: Lighting Setup Generator|Shader NodetreeAction.041
+  - first:
+      74: 4462190871665651125
+    second: Lighting Setup Generator|Shader NodetreeAction.042
+  - first:
+      74: -210336212487608674
+    second: Lighting Setup Generator|Shader NodetreeAction.043
+  - first:
+      74: 300655385310698286
+    second: Lighting Setup Generator|Shader NodetreeAction.044
+  - first:
+      74: -5188238834609001335
+    second: Lighting Setup Generator|Shader NodetreeAction.045
+  - first:
+      74: 8007466692091317374
+    second: Lighting Setup Generator|Shader NodetreeAction.046
+  - first:
+      74: 2406896503697545106
+    second: Lighting Setup Generator|Shader NodetreeAction.047
+  - first:
+      74: -5008713548369376442
+    second: Lighting Setup Generator|Shader NodetreeAction.048
+  - first:
+      74: -5693109653825207178
+    second: Lighting Setup Generator|Shader NodetreeAction.049
+  - first:
+      74: 3329356390596745153
+    second: Lighting Setup Generator|Shader NodetreeAction.051
+  - first:
+      74: 7633230358463082304
+    second: Lighting Setup Generator|Shader NodetreeAction.052
+  - first:
+      74: 9171091440475237683
+    second: Lighting Setup Generator|Shader NodetreeAction.055
+  - first:
+      74: -1803852530076236967
+    second: Lighting Setup Generator|Shader NodetreeAction.071
+  - first:
+      74: 7848803576775504777
+    second: Lighting Setup Generator|Shader NodetreeAction.080
+  - first:
+      74: -8765451436582021862
+    second: Lighting Setup Generator|Shader NodetreeAction.082
+  - first:
+      74: -7957789560679390916
+    second: Lighting Setup Generator|Shader NodetreeAction.084
+  - first:
+      74: -2749553796684502287
+    second: Lighting Setup Generator|Shader NodetreeAction.103
+  - first:
+      74: -4225868903450627721
+    second: Lighting Setup Generator|Shader NodetreeAction.116
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

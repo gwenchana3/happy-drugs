@@ -216,7 +216,7 @@ MonoBehaviour:
     m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   tint:
     m_OverrideState: 1
-    m_Value: {r: 0.20228752, g: 0.08290317, b: 0.6509434, a: 1}
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
   maxFogDistance:
     m_OverrideState: 1
     m_Value: 3758
@@ -243,7 +243,7 @@ MonoBehaviour:
     m_Value: 1
   albedo:
     m_OverrideState: 1
-    m_Value: {r: 0.07843135, g: 0.1069477, b: 0.67058825, a: 1}
+    m_Value: {r: 0.1689213, g: 0.29913333, b: 0.49056602, a: 1}
   globalLightProbeDimmer:
     m_OverrideState: 1
     m_Value: 1
@@ -277,6 +277,28 @@ MonoBehaviour:
   directionalLightsOnly:
     m_OverrideState: 0
     m_Value: 0
+--- !u!114 &-1928048546480021252
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da5ab44aadfb1804db5fd470983ac1b8, type: 3}
+  m_Name: LiftGammaGain
+  m_EditorClassIdentifier: 
+  active: 1
+  lift:
+    m_OverrideState: 0
+    m_Value: {x: 0.99557966, y: 0.956071, z: 1, w: 0}
+  gamma:
+    m_OverrideState: 1
+    m_Value: {x: 0.9792625, y: 0.9759804, z: 1, w: 0}
+  gain:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.9929481, z: 0.9839181, w: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,6 +323,7 @@ MonoBehaviour:
   - {fileID: 3613379532415127153}
   - {fileID: 6935799667807068834}
   - {fileID: -6941946229426682162}
+  - {fileID: -1928048546480021252}
 --- !u!114 &816386687465335527
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -399,7 +422,7 @@ MonoBehaviour:
     m_Value: {fileID: 0}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.157
+    m_Value: 0.165
   m_MaxSamples:
     m_OverrideState: 1
     m_Value: 6
@@ -754,7 +777,7 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 2.32
+    m_Value: 0.59
   directLightingStrength:
     m_OverrideState: 1
     m_Value: 0
