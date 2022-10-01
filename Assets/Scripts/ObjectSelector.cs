@@ -22,15 +22,67 @@ class ObjectSelector : MonoBehaviour
 	[field: Tooltip("The delay for the fire input buffer")]
 	protected float _fireBufferTimer { get; private set; } = 0.1f;
 
-	/// <summary>
-	/// The gameobject that's currently hovered over
-	/// </summary>
-	public InteractableObject current { get; private set; } = null;
+	private InteractableObject _current = null;
 
 	/// <summary>
 	/// The gameobject that's currently hovered over
 	/// </summary>
-	public InteractableObject held { get; private set; } = null;
+	public InteractableObject current
+	{
+		get
+		{
+			return _current;
+		}
+		set
+		{
+			if (_current != value)
+			{
+				if (_current != null && _current != _held)
+				{
+					_current.HoverStop();
+				}
+				_current = value;
+				if (_current != null)
+				{
+					_current.HoverStart();
+				}
+			}
+		}
+	}
+
+	private InteractableObject _held = null;
+
+	/// <summary>
+	/// The gameobject that's currently hovered over
+	/// </summary>
+	public InteractableObject held
+	{
+		get
+		{
+			return _held;
+		}
+		set
+		{
+			if (_held != value)
+			{
+				if (_held != null)
+				{
+					_held.HoverStop();
+					_held.Drop();
+					if (current != null)
+					{
+						current.Interact(_held);
+					}
+				}
+				_held = value;
+				if (_held != null)
+				{
+					_held.PickUp();
+					_held.HoverStart();
+				}
+			}
+		}
+	}
 
 	/// <summary>
 	/// The physics layers objects can be dragged on
@@ -52,15 +104,16 @@ class ObjectSelector : MonoBehaviour
 	/// </summary>
 	protected virtual void Update()
 	{
+		// update input buffers and such
 		UpdateTimeBufferedValues();
 
 		// activate fire buffer on fire
-		bool justFired = Input.GetButtonDown("Fire1");
-		if (justFired)
+		if (Input.GetButtonDown("Fire1"))
 		{
 			fireBuffer.Active = true;
 		}
 
+		// get vectors for raycast
 		Vector3 origin = _camera.transform.position;
 		Vector3 cursorPos = _camera.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * _camera.nearClipPlane);
 		Vector3 dir = cursorPos - _camera.transform.position;
@@ -71,48 +124,26 @@ class ObjectSelector : MonoBehaviour
 
 		// hover logic
 		InteractableObject next = didHit ? hit.transform.gameObject.GetComponent<InteractableObject>() : null;
-		if (next != current)
-		{
-			if (current != null && current != held)
-			{
-				// stop hovering current
-				current.HoverStop();
-			}
+		current = next;
 
-			// update current
-			current = next;
-
-			if (current != null)
-			{
-				// start hover
-				current.HoverStart();
-			}
-		}
-
+		// holding logic
 		if (held != null)
 		{
 			if (Input.GetButton("Fire1") && didHit)
 			{
-				RaycastHit hitWorld;
-				Physics.Raycast(hit.point + Vector3.up * 20f, Vector3.down, out hitWorld);
-
-				held.wantedPos = hitWorld.point;
+				// move held
+				held.wantedPos = hit.point;
 			}
-			if (Input.GetButtonUp("Fire1"))
+			else if (Input.GetButtonUp("Fire1"))
 			{
-				held.HoverStop();
-				held.Drop();
-				if (current != null)
-				{
-					current.Interact(held);
-				}
+				// drop held
 				held = null;
 			}
 		}
 		else if (current != null && fireBuffer.Active)
 		{
+			// grab current
 			held = current;
-			held.PickUp();
 			fireBuffer.Active = false;
 		}
 	}
