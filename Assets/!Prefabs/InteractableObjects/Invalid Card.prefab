@@ -14,7 +14,7 @@ PrefabInstance:
     - target: {fileID: 5064585364966120150, guid: 83e041c38a10504dabf70407083881af,
         type: 3}
       propertyPath: m_Name
-      value: Card
+      value: Invalid Card
       objectReference: {fileID: 0}
     - target: {fileID: 5064585364966120155, guid: 83e041c38a10504dabf70407083881af,
         type: 3}

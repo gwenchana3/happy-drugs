@@ -68,6 +68,11 @@ class InteractableObject : MonoBehaviour
 	public Vector3 spawnPoint { get; set; } = default;
 
 	/// <summary>
+	/// The rotation this object should respawn with
+	/// </summary>
+	public Quaternion spawnRotation { get; set; } = default;
+
+	/// <summary>
 	/// Is this object being dragged currently
 	/// </summary>
 	[HideInInspector]
@@ -93,6 +98,7 @@ class InteractableObject : MonoBehaviour
 		animator = GetComponent<Animator>();
 		rigidbody = GetComponent<Rigidbody>();
 		spawnPoint = transform.position;
+		spawnRotation = transform.rotation;
 	}
 
 	protected virtual void Update()
@@ -107,6 +113,7 @@ class InteractableObject : MonoBehaviour
 			if (canRespawn)
 			{
 				transform.position = spawnPoint;
+				transform.rotation = spawnRotation;
 				rigidbody.velocity = Vector3.zero;
 			}
 			else

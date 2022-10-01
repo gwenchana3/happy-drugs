@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 2434373277054037064, guid: 753c60e1251cce5549e5af21080adad1,
         type: 3}
       propertyPath: m_Name
-      value: Money
+      value: Fake Money
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 753c60e1251cce5549e5af21080adad1, type: 3}

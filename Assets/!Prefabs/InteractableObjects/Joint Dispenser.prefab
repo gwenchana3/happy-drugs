@@ -7,6 +7,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3335128073796832448, guid: 3a9fb7a8279bf228e8ae96e27fc028ac,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8133513348980310616, guid: 1148911a3bbfc7c4cbc82c5f4b33a95f,
+        type: 3}
     - target: {fileID: 4723875534347664366, guid: 3a9fb7a8279bf228e8ae96e27fc028ac,
         type: 3}
       propertyPath: _drug
@@ -81,7 +87,7 @@ PrefabInstance:
     - target: {fileID: 6598822784726644345, guid: 3a9fb7a8279bf228e8ae96e27fc028ac,
         type: 3}
       propertyPath: m_Constraints
-      value: 112
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a9fb7a8279bf228e8ae96e27fc028ac, type: 3}

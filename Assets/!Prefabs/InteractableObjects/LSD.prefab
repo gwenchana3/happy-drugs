@@ -27,6 +27,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LSD
       objectReference: {fileID: 0}
+    - target: {fileID: 2810954446951149166, guid: 3f432be6d3f589f38840f6f7485f0a07,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2810954446951149167, guid: 3f432be6d3f589f38840f6f7485f0a07,
         type: 3}
       propertyPath: m_RootOrder

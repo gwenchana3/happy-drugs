@@ -19,7 +19,7 @@ PrefabInstance:
     - target: {fileID: 1881705957768109687, guid: 616d1b2a19bb671b1a7f6f49fb993424,
         type: 3}
       propertyPath: m_Name
-      value: LSD Dispenser
+      value: MDMA Dispenser
       objectReference: {fileID: 0}
     - target: {fileID: 1881705957768109690, guid: 616d1b2a19bb671b1a7f6f49fb993424,
         type: 3}
@@ -76,5 +76,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3747941084964536998, guid: 616d1b2a19bb671b1a7f6f49fb993424,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5983b244d0d648c4ca0527cbf2d5e94d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 616d1b2a19bb671b1a7f6f49fb993424, type: 3}
