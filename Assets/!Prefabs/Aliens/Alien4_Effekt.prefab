@@ -256,6 +256,12 @@ MonoBehaviour:
   DemandedDrug: 1
   WaitingTime: 10
   DestinationPoint: {fileID: 0}
+  validObjects:
+  - {fileID: 5064585364966120150, guid: 83e041c38a10504dabf70407083881af, type: 3}
+  - {fileID: 2434373277054037064, guid: 753c60e1251cce5549e5af21080adad1, type: 3}
+  invalidObjects:
+  - {fileID: 5625386941291779430, guid: e3b20ee7bd290ff27a4669adbe226f2c, type: 3}
+  - {fileID: 8284113614814386577, guid: ea73c3411eb2606dc87ef10ed8d41e20, type: 3}
 --- !u!54 &3668643295376795961
 Rigidbody:
   m_ObjectHideFlags: 0

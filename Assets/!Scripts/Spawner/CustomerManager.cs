@@ -20,6 +20,17 @@ public class CustomerManager : MonoBehaviour
 
 	private bool _goingDownTheSuislide;
 
+	private bool _isTrustworthy;
+
+	[SerializeField]
+	private GameObject[] validObjects = new GameObject[0];
+	[SerializeField]
+	private GameObject[] invalidObjects = new GameObject[0];
+
+	private GameObject _instantiatedObject = null;
+
+	private bool _hasArrived = false;
+
 	private void Awake()
 	{
 		_navAgent = GetComponentInChildren<NavMeshAgent>();
@@ -31,6 +42,7 @@ public class CustomerManager : MonoBehaviour
 		_spawner = Manager.Use<PlayManager>().Spawner;
 		_spawnTime = Time.time;
 		Debug.Log(_visualEffect.enabled);
+		_isTrustworthy = Random.value > 0.8;
 	}
 
 	private void Start()
@@ -40,16 +52,31 @@ public class CustomerManager : MonoBehaviour
 
 	private void Update()
 	{
-		if (!_navAgent.hasPath)
+		if (!_navAgent.hasPath && !_hasArrived)
 		{
+			_hasArrived = true;
 			Vector3 dir = Camera.main.transform.position - transform.position;
 			dir.y = 0;
 			transform.rotation = Quaternion.LookRotation(dir);
+
+			SpawnObjects();
 		}
 
 		if (_spawnTime + WaitingTime <= Time.time && !_goingDownTheSuislide)
 		{
 			CommitSuicide();
+		}
+	}
+
+	protected virtual void SpawnObjects()
+	{
+		if (_isTrustworthy)
+		{
+			_instantiatedObject = Instantiate(validObjects[Random.Range(0, validObjects.Length)], DestinationPoint.ObjectSpawnPoint.position, DestinationPoint.ObjectSpawnPoint.rotation);
+		}
+		else
+		{
+			_instantiatedObject = Instantiate(invalidObjects[Random.Range(0, invalidObjects.Length)], DestinationPoint.ObjectSpawnPoint.position, DestinationPoint.ObjectSpawnPoint.rotation);
 		}
 	}
 
@@ -60,6 +87,9 @@ public class CustomerManager : MonoBehaviour
 		{
 			// Customer gets a drug
 			ReceiveDrug(drug);
+
+			// Destroy drug
+			Destroy(drug.gameObject);
 			return;
 		}
 
@@ -83,9 +113,6 @@ public class CustomerManager : MonoBehaviour
 		{
 			LeaveRoom();
 		}
-
-		// Destroy drug
-		Destroy(drug.gameObject);
 	}
 
 	public void EnterRoom()
@@ -99,13 +126,7 @@ public class CustomerManager : MonoBehaviour
 		Debug.Log("Suicide");
 		DestinationPoint.IsOccupied = false;
 		_particleSystem.Play();
-		Invoke("DestroyWithDelay", 1.5f);
-	}
-
-	private void DestroyWithDelay()
-	{
-		DestinationPoint.IsOccupied = false;
-		Destroy(gameObject);
+		Destroy(gameObject, 1.5f);
 	}
 
 	public void CommitSuicide()
@@ -114,6 +135,16 @@ public class CustomerManager : MonoBehaviour
 		Debug.Log("Suicide");
 		_visualEffect.enabled = true;
 		_spawner.DecreaseHP(1);
-		Invoke("DestroyWithDelay", 1.5f);
+
+		Destroy(gameObject, 1.5f);
+	}
+
+	protected virtual void OnDestroy()
+	{
+		DestinationPoint.IsOccupied = false;
+		if (_instantiatedObject != null)
+		{
+			Destroy(_instantiatedObject);
+		}
 	}
 }
