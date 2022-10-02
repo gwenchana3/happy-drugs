@@ -168,8 +168,6 @@ class InteractableObject : MonoBehaviour
 		}
 		OnDragged?.Invoke();
 		animator.SetBool("Held", true);
-		audioSource.clip = sounds[Random.Range(0, sounds.Length)];
-		audioSource.Play();
 	}
 
 	/// <summary>
@@ -186,5 +184,7 @@ class InteractableObject : MonoBehaviour
 		}
 		OnDropped?.Invoke();
 		animator.SetBool("Held", false);
+		audioSource.clip = sounds[Random.Range(0, sounds.Length)];
+		audioSource.Play();
 	}
 }
