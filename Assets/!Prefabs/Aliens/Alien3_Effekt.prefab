@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 4034372722399508304}
   - component: {fileID: 8638792977997893489}
   - component: {fileID: 2163300028539927730}
-  - component: {fileID: -5845890881425867840}
+  - component: {fileID: 4348601882789996763}
   m_Layer: 9
   m_Name: Alien3_Effekt
   m_TagString: Untagged
@@ -408,7 +408,7 @@ MonoBehaviour:
   sounds:
   - {fileID: 8300000, guid: dc8f2c7d1c9e606c59d12a13436310dc, type: 3}
   - {fileID: 8300000, guid: f73df63ab3f74c72caa03750dd9152cd, type: 3}
---- !u!65 &-5845890881425867840
+--- !u!65 &4348601882789996763
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
