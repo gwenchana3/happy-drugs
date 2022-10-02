@@ -70,13 +70,13 @@ public class CustomerManager : MonoBehaviour
 
 	protected virtual void SpawnObjects()
 	{
-		if (!_isTrustworthy)
+		if (_isTrustworthy)
 		{
-			_instantiatedObject = Instantiate(invalidObjects[Random.Range(0, invalidObjects.Length)], DestinationPoint.ObjectSpawnPoint.position, DestinationPoint.ObjectSpawnPoint.rotation);
+			_instantiatedObject = Instantiate(validObjects[Random.Range(0, validObjects.Length)], DestinationPoint.ObjectSpawnPoint.position, DestinationPoint.ObjectSpawnPoint.rotation);
 		}
 		else
 		{
-			_instantiatedObject = Instantiate(validObjects[Random.Range(0, validObjects.Length)], DestinationPoint.ObjectSpawnPoint.position, DestinationPoint.ObjectSpawnPoint.rotation);
+			_instantiatedObject = Instantiate(invalidObjects[Random.Range(0, invalidObjects.Length)], DestinationPoint.ObjectSpawnPoint.position, DestinationPoint.ObjectSpawnPoint.rotation);
 		}
 	}
 
@@ -87,6 +87,9 @@ public class CustomerManager : MonoBehaviour
 		{
 			// Customer gets a drug
 			ReceiveDrug(drug);
+
+			// Destroy drug
+			Destroy(drug.gameObject);
 			return;
 		}
 
@@ -110,9 +113,6 @@ public class CustomerManager : MonoBehaviour
 		{
 			LeaveRoom();
 		}
-
-		// Destroy drug
-		Destroy(drug.gameObject);
 	}
 
 	public void EnterRoom()
@@ -126,7 +126,7 @@ public class CustomerManager : MonoBehaviour
 		Debug.Log("Suicide");
 		DestinationPoint.IsOccupied = false;
 		_particleSystem.Play();
-		Invoke("DestroyWithDelay", 1.5f);
+		Destroy(gameObject, 1.5f);
 	}
 
 	public void CommitSuicide()
