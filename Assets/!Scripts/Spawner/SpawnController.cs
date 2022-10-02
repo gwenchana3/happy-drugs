@@ -86,7 +86,7 @@ public class SpawnController : MonoBehaviour
 
 	public void Update()
 	{
-		if (SpawnAmmount >= SpawnCounter)
+		if (SpawnAmmount > SpawnCounter)
 		{
 			switch (SpawnMode)
 			{
