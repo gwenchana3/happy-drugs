@@ -9,6 +9,10 @@ public class SpawnController : MonoBehaviour
 
     public SpawnType SpawnMode;
 
+    public int SpawnAmmount;
+
+    private int _spawnCounter;
+
     public static SpawnController Instance
     {
         get
@@ -44,21 +48,41 @@ public class SpawnController : MonoBehaviour
         thisCustomer.EnterRoom();
     }
 
+    private void EndGame(bool isWin)
+    {
+        switch(isWin)
+        {
+            case true:
+                //dostuff
+                return;
+            case false:
+                //dostuff
+                return;
+        }
+    }
+
     public void Update()
     {
-        switch(SpawnMode)
+        if (SpawnAmmount >= _spawnCounter)
         {
-            case SpawnType.OneAtATime:
-                if (!FindObjectOfType<CustomerManager>())
-                    Spawn();
-                break;
-            case SpawnType.TimedSpawn:
-                if (Time.time >= _lastTime + SpawnTime)
-                {
-                    Spawn();
-                    _lastTime = Time.time;
-                }                    
-                break;
+            switch (SpawnMode)
+            {
+                case SpawnType.OneAtATime:
+                    if (!FindObjectOfType<CustomerManager>())
+                        Spawn();
+                    break;
+                case SpawnType.TimedSpawn:
+                    if (Time.time >= _lastTime + SpawnTime)
+                    {
+                        Spawn();
+                        _lastTime = Time.time;
+                    }
+                    break;
+            }
+        }
+        else if(!FindObjectOfType<CustomerManager>())
+        {
+            EndGame(true);
         }
     }
 }
