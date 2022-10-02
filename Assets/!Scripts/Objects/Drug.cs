@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(InteractableObject))]
-class Drug : MonoBehaviour
+public class Drug : MonoBehaviour
 {
 	/// <summary>
 	/// The type of this drug
