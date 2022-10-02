@@ -8,10 +8,11 @@ public class CustomerManager : MonoBehaviour
     public DrugType DemandedDrug;
 
     [HideInInspector]
-    public Transform DestinationPoint;
+    public DestinationPoint DestinationPoint;
     [HideInInspector]
     public Transform ExitPoint;
     private NavMeshAgent _navAgent;
+    private bool _leaving;
 
     private void Awake()
     {
@@ -21,6 +22,12 @@ public class CustomerManager : MonoBehaviour
     private void Start()
     {
         EnterRoom();
+    }
+
+    private void Update()
+    {
+        if (_leaving && !_navAgent.hasPath)
+            Destroy(this.gameObject);
     }
 
     public void ReceiveDrug(Drug drug)
@@ -38,12 +45,15 @@ public class CustomerManager : MonoBehaviour
 
     public void EnterRoom()
     {
-        _navAgent.SetDestination(DestinationPoint.position);
+        _navAgent.SetDestination(DestinationPoint.transform.position);
+        DestinationPoint.IsOccupied = true;
     }
 
     public void LeaveRoom()
     {
         _navAgent.SetDestination(ExitPoint.position);
+        DestinationPoint.IsOccupied = false;
+        _leaving = true;
     }
     
     public void CommitSuicide()
