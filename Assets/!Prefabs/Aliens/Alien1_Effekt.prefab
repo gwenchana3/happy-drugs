@@ -156,7 +156,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6707178059403946295}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &7901852525216656589
 ParticleSystem:
@@ -4975,8 +4975,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3099774968220842019}
-  - {fileID: 6996366565207234820}
   - {fileID: 1808207635424897926}
+  - {fileID: 6996366565207234820}
   - {fileID: 1889137890482447726}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -5294,7 +5294,7 @@ PrefabInstance:
     - target: {fileID: 2689679854593849590, guid: 9efcd900faa857947b320ba4336c7b0b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2689679854593849590, guid: 9efcd900faa857947b320ba4336c7b0b,
         type: 3}
