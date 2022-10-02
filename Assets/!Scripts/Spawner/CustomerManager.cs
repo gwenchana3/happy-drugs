@@ -23,9 +23,12 @@ public class CustomerManager : MonoBehaviour
 	private bool _isTrustworthy;
 
 	[SerializeField]
-	private GameObject[] validObjects = new GameObject[0];
+	private GameObject[] _validObjects = new GameObject[0];
 	[SerializeField]
-	private GameObject[] invalidObjects = new GameObject[0];
+	private GameObject[] _invalidObjects = new GameObject[0];
+
+	[SerializeField]
+	private GameObject _speechBubble = null;
 
 	private GameObject _instantiatedObject = null;
 
@@ -42,7 +45,8 @@ public class CustomerManager : MonoBehaviour
 		_spawner = Manager.Use<PlayManager>().Spawner;
 		_spawnTime = Time.time;
 		Debug.Log(_visualEffect.enabled);
-		_isTrustworthy = Random.value > 0.8;
+		_isTrustworthy = Random.value < 0.8;
+		_speechBubble.SetActive(false);
 	}
 
 	private void Start()
@@ -58,6 +62,7 @@ public class CustomerManager : MonoBehaviour
 			Vector3 dir = Camera.main.transform.position - transform.position;
 			dir.y = 0;
 			transform.rotation = Quaternion.LookRotation(dir);
+			_speechBubble.SetActive(true);
 
 			SpawnObjects();
 		}
@@ -72,11 +77,11 @@ public class CustomerManager : MonoBehaviour
 	{
 		if (_isTrustworthy)
 		{
-			_instantiatedObject = Instantiate(validObjects[Random.Range(0, validObjects.Length)], DestinationPoint.ObjectSpawnPoint.position, DestinationPoint.ObjectSpawnPoint.rotation);
+			_instantiatedObject = Instantiate(_validObjects[Random.Range(0, _validObjects.Length)], DestinationPoint.ObjectSpawnPoint.position, DestinationPoint.ObjectSpawnPoint.rotation);
 		}
 		else
 		{
-			_instantiatedObject = Instantiate(invalidObjects[Random.Range(0, invalidObjects.Length)], DestinationPoint.ObjectSpawnPoint.position, DestinationPoint.ObjectSpawnPoint.rotation);
+			_instantiatedObject = Instantiate(_invalidObjects[Random.Range(0, _invalidObjects.Length)], DestinationPoint.ObjectSpawnPoint.position, DestinationPoint.ObjectSpawnPoint.rotation);
 		}
 	}
 
