@@ -349,7 +349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mat: {fileID: 0}
   check: 1
-  Hardness: 0.9
-  ConeSize: 0.1
+  Hardness: 0.8
+  ConeSize: 0.3
   deb: {x: 0, y: 0, z: 0}
   deb2: {x: 0, y: 0, z: 0}

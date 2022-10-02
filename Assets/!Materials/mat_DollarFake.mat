@@ -23,8 +23,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Money
-  m_Shader: {fileID: -6465566751694194690, guid: aff04ace7ed014c7781078687e69bf10,
+  m_Name: mat_DollarFake
+  m_Shader: {fileID: -6465566751694194690, guid: d83b5fe618f71b011925f9b176f7a0a4,
     type: 3}
   m_ValidKeywords:
   - _DISABLE_SSR_TRANSPARENT
@@ -45,11 +45,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _SampleTexture2D_5bf7d440517844c097d7e84e0a0dc283_Texture_1:
-        m_Texture: {fileID: 2800000, guid: dffef66376be4fa480fb02b19edbe903, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1dbc1db8b39e1f24d9e34534f7fb5866, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_835cec9907ba43319a147744079eb5e7_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 1dbc1db8b39e1f24d9e34534f7fb5866, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_a60fe3ae17dd4273abc6afaa1ec46d9f_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 4b38ef1013892a5489d124b7b7e81e46, type: 3}
+        m_Texture: {fileID: 2800000, guid: d6354325cf66c294794e82e6b617a19d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
