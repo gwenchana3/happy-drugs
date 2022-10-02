@@ -2,6 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(AudioSource))]
 class InteractableObject : MonoBehaviour
 {
 	/// <summary>
@@ -87,6 +88,10 @@ class InteractableObject : MonoBehaviour
 	[field: Tooltip("Determines how quickly this object moves towards it's goal position")]
 	protected float _smoothTime { get; private set; } = 0.1f;
 
+	[SerializeField]
+	AudioClip[] sounds = new AudioClip[0];
+
+	protected AudioSource audioSource = null;
 	protected Animator animator = null;
 	protected new Rigidbody rigidbody = null;
 
@@ -97,6 +102,7 @@ class InteractableObject : MonoBehaviour
 	{
 		animator = GetComponent<Animator>();
 		rigidbody = GetComponent<Rigidbody>();
+		audioSource = GetComponent<AudioSource>();
 		spawnPoint = transform.position;
 		spawnRotation = transform.rotation;
 	}
@@ -162,6 +168,8 @@ class InteractableObject : MonoBehaviour
 		}
 		OnDragged?.Invoke();
 		animator.SetBool("Held", true);
+		audioSource.clip = sounds[Random.Range(0, sounds.Length)];
+		audioSource.Play();
 	}
 
 	/// <summary>

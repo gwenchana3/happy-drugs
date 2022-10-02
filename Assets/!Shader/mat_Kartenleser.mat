@@ -193,6 +193,7 @@ Material:
     - _IridescenceMask: 1
     - _IridescenceThickness: 1
     - _Kartenleser: 1
+    - _KartenleserStatus: 0
     - _LinkDetailsWithBase: 1
     - _MaterialID: 1
     - _Metallic: 0
