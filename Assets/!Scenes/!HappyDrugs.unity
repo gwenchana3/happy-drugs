@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnMode: 0
-  SpawnAmmount: 12
+  SpawnAmmount: 22
   GameHP: 3
   SpawnCounter: 0
   CustomerTemplates:
