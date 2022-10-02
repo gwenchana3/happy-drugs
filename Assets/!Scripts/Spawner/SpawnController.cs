@@ -32,7 +32,7 @@ public class SpawnController : MonoBehaviour
 
     private void Awake()
     {
-        _lastTime = Time.time;
+        _lastTime = Time.time - SpawnTime;
     }
 
     public void Spawn()
@@ -40,7 +40,8 @@ public class SpawnController : MonoBehaviour
         CustomerManager thisCustomer = Instantiate(CustomerTemplates[_random.Next(0, CustomerTemplates.Length)], 
             transform.position, transform.rotation);
 
-        thisCustomer.DestinationPoint = Destinations.First(o => o.IsOccupied == false).transform;
+        try { thisCustomer.DestinationPoint = Destinations.First(o => o.IsOccupied == false); }
+        catch { Destroy(thisCustomer.gameObject); return; }
         thisCustomer.ExitPoint = ExitPoint;
         thisCustomer.EnterRoom();
     }
