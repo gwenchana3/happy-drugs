@@ -101,16 +101,21 @@ public class CustomerManager : MonoBehaviour
 		Stamp stamp = interactWith.GetComponent<Stamp>();
 		if (stamp != null)
 		{
-			// Customer is sent away
-			LeaveRoom();
 			stamp.has_ink = false;
-			Debug.Log("Used stamp on customer");
+			if (!_isTrustworthy)
+			{
+				LeaveRoom();
+			}
+			else
+			{
+				CommitSuicide();
+			}
 		}
 	}
 
 	public void ReceiveDrug(Drug drug)
 	{
-		if (drug.drugType != DemandedDrug)
+		if (!_isTrustworthy || drug.drugType != DemandedDrug)
 		{
 			CommitSuicide();
 		}
