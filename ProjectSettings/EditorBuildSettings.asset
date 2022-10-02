@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/!Scenes/!HappyDrugs.unity
     guid: e102227794e172349b095fd9255f2887
+  - enabled: 1
+    path: Assets/!Scenes/MainMenu.unity
+    guid: 4bc499dc2e0ac7b42a96aeebf9ab3474
   m_configObjects: {}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class SpawnController : MonoBehaviour
 {
@@ -60,10 +61,10 @@ public class SpawnController : MonoBehaviour
         switch(isWin)
         {
             case true:
-                //dostuff
+                SceneManager.LoadScene("WinScreenScene");
                 return;
             case false:
-                //dostuff
+                SceneManager.LoadScene("LoseSceneScreen");
                 return;
         }
     }
