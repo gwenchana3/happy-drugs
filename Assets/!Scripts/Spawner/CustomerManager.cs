@@ -16,6 +16,8 @@ public class CustomerManager : MonoBehaviour
     private ParticleSystem _particleSystem;
     private VisualEffect _visualEffect;
 
+    private SpawnController _spawnController;
+
     private void Awake()
     {
         _navAgent = GetComponentInChildren<NavMeshAgent>();
@@ -26,6 +28,7 @@ public class CustomerManager : MonoBehaviour
     private void Start()
     {
         _waitedTime = Time.time;
+        _spawnController = Manager.Use<PlayManager>().Spawner;
         EnterRoom();
     }
 
