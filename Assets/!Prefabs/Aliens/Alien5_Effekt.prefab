@@ -5068,12 +5068,13 @@ MonoBehaviour:
   DemandedDrug: 0
   WaitingTime: 10
   DestinationPoint: {fileID: 0}
-  validObjects:
-  - {fileID: 5064585364966120150, guid: 83e041c38a10504dabf70407083881af, type: 3}
+  _validObjects:
   - {fileID: 2434373277054037064, guid: 753c60e1251cce5549e5af21080adad1, type: 3}
-  invalidObjects:
-  - {fileID: 5625386941291779430, guid: e3b20ee7bd290ff27a4669adbe226f2c, type: 3}
+  - {fileID: 5064585364966120150, guid: 83e041c38a10504dabf70407083881af, type: 3}
+  _invalidObjects:
   - {fileID: 8284113614814386577, guid: ea73c3411eb2606dc87ef10ed8d41e20, type: 3}
+  - {fileID: 5625386941291779430, guid: e3b20ee7bd290ff27a4669adbe226f2c, type: 3}
+  _speechBubble: {fileID: 3610714189884347857}
 --- !u!54 &3575011797464331212
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5308,6 +5309,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9aa36bae19716e5dacea5e28830e0da, type: 3}
+--- !u!1 &3610714189884347857 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3972189539564001118, guid: a9aa36bae19716e5dacea5e28830e0da,
+    type: 3}
+  m_PrefabInstance: {fileID: 377132745349448335}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3610714189884347859 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3972189539564001116, guid: a9aa36bae19716e5dacea5e28830e0da,
