@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DemandedDrug: 0
-  WaitingTime: 0
+  WaitingTime: 10
   DestinationPoint: {fileID: 0}
 --- !u!198 &7926919727714533869
 ParticleSystem:

@@ -165,6 +165,7 @@ Transform:
   - {fileID: 4399226977248128366}
   - {fileID: 1775234556013853363}
   - {fileID: 2201029356745378071}
+  - {fileID: 2126944033691517076}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -252,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e168969e6d8233744a2263c7212a9ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DemandedDrug: 0
+  DemandedDrug: 2
   WaitingTime: 10
   DestinationPoint: {fileID: 0}
 --- !u!54 &8609685139707662799
@@ -5232,6 +5233,87 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1001 &3072687512753133512
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8280169560526620599}
+    m_Modifications:
+    - target: {fileID: 3972189539564001116, guid: a9aa36bae19716e5dacea5e28830e0da,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3972189539564001116, guid: a9aa36bae19716e5dacea5e28830e0da,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3972189539564001116, guid: a9aa36bae19716e5dacea5e28830e0da,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.013
+      objectReference: {fileID: 0}
+    - target: {fileID: 3972189539564001116, guid: a9aa36bae19716e5dacea5e28830e0da,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3972189539564001116, guid: a9aa36bae19716e5dacea5e28830e0da,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3972189539564001116, guid: a9aa36bae19716e5dacea5e28830e0da,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3972189539564001116, guid: a9aa36bae19716e5dacea5e28830e0da,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3972189539564001116, guid: a9aa36bae19716e5dacea5e28830e0da,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3972189539564001116, guid: a9aa36bae19716e5dacea5e28830e0da,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3972189539564001116, guid: a9aa36bae19716e5dacea5e28830e0da,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3972189539564001116, guid: a9aa36bae19716e5dacea5e28830e0da,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3972189539564001117, guid: a9aa36bae19716e5dacea5e28830e0da,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d22ec4767fe073c498c705c757627d9f,
+        type: 3}
+    - target: {fileID: 3972189539564001118, guid: a9aa36bae19716e5dacea5e28830e0da,
+        type: 3}
+      propertyPath: m_Name
+      value: DrugSign
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a9aa36bae19716e5dacea5e28830e0da, type: 3}
+--- !u!4 &2126944033691517076 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3972189539564001116, guid: a9aa36bae19716e5dacea5e28830e0da,
+    type: 3}
+  m_PrefabInstance: {fileID: 3072687512753133512}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4463436664829837893
 PrefabInstance:
   m_ObjectHideFlags: 0
