@@ -175,7 +175,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -5064,8 +5064,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e168969e6d8233744a2263c7212a9ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DemandedDrug: 0
-  WaitingTime: 0
+  DemandedDrug: 2
+  WaitingTime: 10
   DestinationPoint: {fileID: 0}
 --- !u!54 &5006177144243331248
 Rigidbody:
@@ -5239,6 +5239,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6707178059403946295}
     m_Modifications:
+    - target: {fileID: 1121059879433946702, guid: 9efcd900faa857947b320ba4336c7b0b,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2689679854593849590, guid: 9efcd900faa857947b320ba4336c7b0b,
         type: 3}
       propertyPath: m_RootOrder

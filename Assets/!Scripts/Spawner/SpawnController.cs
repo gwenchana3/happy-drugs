@@ -11,6 +11,8 @@ public class SpawnController : MonoBehaviour
 
     public int SpawnAmmount;
 
+    public int GameHP { get; private set; }
+
     private int _spawnCounter;
 
     public static SpawnController Instance
@@ -48,6 +50,11 @@ public class SpawnController : MonoBehaviour
         thisCustomer.EnterRoom();
     }
 
+    public void DecreaseHP(int ammount)
+    {
+        GameHP -= ammount;
+    }
+
     private void EndGame(bool isWin)
     {
         switch(isWin)
@@ -83,6 +90,11 @@ public class SpawnController : MonoBehaviour
         else if(!FindObjectOfType<CustomerManager>())
         {
             EndGame(true);
+        }
+
+        if(GameHP <= 0)
+        {
+            EndGame(false);
         }
     }
 }

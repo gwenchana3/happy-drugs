@@ -8,30 +8,33 @@ using UnityEngine.VFX;
 public class CustomerManager : MonoBehaviour
 {
 	public DrugType DemandedDrug;
-	public float WaitingTime;
+	public float WaitingTime = 10;
 
-	private float _waitedTime;
+	private float _spawnTime;
 	[HideInInspector]
 	public DestinationPoint DestinationPoint;
 	private NavMeshAgent _navAgent;
 	private ParticleSystem _particleSystem;
 	private VisualEffect _visualEffect;
+	private SpawnController _spawner;
 
-	private SpawnController _spawnController;
+	private bool _goingDownTheSuislide;
 
 	private void Awake()
 	{
 		_navAgent = GetComponentInChildren<NavMeshAgent>();
-		_visualEffect = GetComponent<VisualEffect>();
-		_particleSystem = GetComponent<ParticleSystem>();
+		_visualEffect = GetComponentInChildren<VisualEffect>();
+		_visualEffect.enabled = false;
+		_particleSystem = GetComponentInChildren<ParticleSystem>();
 		InteractableObject interactable = GetComponent<InteractableObject>();
 		interactable.OnInteracted += InteractHandler;
+		_spawner = Manager.Use<PlayManager>().Spawner;
+		_spawnTime = Time.time;
+		Debug.Log(_visualEffect.enabled);
 	}
 
 	private void Start()
 	{
-		_waitedTime = Time.time;
-		_spawnController = Manager.Use<PlayManager>().Spawner;
 		EnterRoom();
 	}
 
@@ -44,7 +47,7 @@ public class CustomerManager : MonoBehaviour
 			transform.rotation = Quaternion.LookRotation(dir);
 		}
 
-		if (_waitedTime + WaitingTime <= Time.time)
+		if (_spawnTime + WaitingTime <= Time.time && !_goingDownTheSuislide)
 		{
 			CommitSuicide();
 		}
@@ -93,25 +96,24 @@ public class CustomerManager : MonoBehaviour
 
 	public void LeaveRoom()
 	{
+		Debug.Log("Suicide");
 		DestinationPoint.IsOccupied = false;
-		StartCoroutine(PlayParticles());
-		Destroy(gameObject);
-	}
-
-	IEnumerator PlayParticles()
-	{
 		_particleSystem.Play();
-		yield return new WaitForSeconds(1.5f);
+		Invoke("DestroyWithDelay", 1.5f);
 	}
 
-	IEnumerator PlayVisualEffect()
+	private void DestroyWithDelay()
 	{
-		_visualEffect.Play();
-		yield return new WaitForSeconds(1.5f);
+		DestinationPoint.IsOccupied = false;
+		Destroy(gameObject);
 	}
 
 	public void CommitSuicide()
 	{
-		// TODO: Go down the Suisilde
+		_goingDownTheSuislide = true;
+		Debug.Log("Suicide");
+		_visualEffect.enabled = true;
+		_spawner.DecreaseHP(1);
+		Invoke("DestroyWithDelay", 1.5f);
 	}
 }
