@@ -14,8 +14,9 @@ public class CustomerManager : MonoBehaviour
 	[HideInInspector]
 	public DestinationPoint DestinationPoint;
 	private NavMeshAgent _navAgent;
-	private ParticleSystem _particleSystem;
+	private ParticleSystem _goodParticleSystem;
 	private VisualEffect _visualEffect;
+	public ParticleSystem[] BadParticles;
 	private SpawnController _spawner;
 
 	private bool _goingDownTheSuislide;
@@ -39,7 +40,7 @@ public class CustomerManager : MonoBehaviour
 		_navAgent = GetComponentInChildren<NavMeshAgent>();
 		_visualEffect = GetComponentInChildren<VisualEffect>();
 		_visualEffect.enabled = false;
-		_particleSystem = GetComponentInChildren<ParticleSystem>();
+		_goodParticleSystem = GetComponentInChildren<ParticleSystem>();
 		InteractableObject interactable = GetComponent<InteractableObject>();
 		interactable.OnInteracted += InteractHandler;
 		_spawner = Manager.Use<PlayManager>().Spawner;
@@ -135,7 +136,7 @@ public class CustomerManager : MonoBehaviour
 	{
 		Debug.Log("Suicide");
 		DestinationPoint.IsOccupied = false;
-		_particleSystem.Play();
+		_goodParticleSystem.Play();
 		Destroy(gameObject, 1.5f);
 	}
 
@@ -145,6 +146,11 @@ public class CustomerManager : MonoBehaviour
 		Debug.Log("Suicide");
 		_visualEffect.enabled = true;
 		_spawner.DecreaseHP(1);
+
+        for (int i = 0; i < BadParticles.Length; i++)
+        {
+			BadParticles[i].Play();
+        }
 
 		Destroy(gameObject, 1.5f);
 	}

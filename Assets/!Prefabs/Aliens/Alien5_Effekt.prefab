@@ -5068,6 +5068,8 @@ MonoBehaviour:
   DemandedDrug: 0
   WaitingTime: 10
   DestinationPoint: {fileID: 0}
+  BadParticles:
+  - {fileID: 7927030716524015836}
   _validObjects:
   - {fileID: 2434373277054037064, guid: 753c60e1251cce5549e5af21080adad1, type: 3}
   - {fileID: 5064585364966120150, guid: 83e041c38a10504dabf70407083881af, type: 3}
@@ -5423,6 +5425,12 @@ PrefabInstance:
 --- !u!4 &4962720470690123364 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2689679854593849590, guid: 9efcd900faa857947b320ba4336c7b0b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7029193687814665874}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7927030716524015836 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1121059879433946702, guid: 9efcd900faa857947b320ba4336c7b0b,
     type: 3}
   m_PrefabInstance: {fileID: 7029193687814665874}
   m_PrefabAsset: {fileID: 0}
