@@ -42,7 +42,7 @@ public class CustomerManager : MonoBehaviour
 		_spawner = Manager.Use<PlayManager>().Spawner;
 		_spawnTime = Time.time;
 		Debug.Log(_visualEffect.enabled);
-		_isTrustworthy = Random.value > 0.5;
+		_isTrustworthy = Random.value > 0.8;
 	}
 
 	private void Start()
