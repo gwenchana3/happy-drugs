@@ -77,5 +77,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MDMA
       objectReference: {fileID: 0}
+    - target: {fileID: 7134405917506877880, guid: 7189cee723d0adbf6841ce409aeaeb68,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3137c77addd8c1545abc8eae01d9a653, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7189cee723d0adbf6841ce409aeaeb68, type: 3}
