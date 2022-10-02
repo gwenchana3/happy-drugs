@@ -55,6 +55,7 @@ public class CustomerManager : MonoBehaviour
 		Drug drug = interactWith.GetComponent<Drug>();
 		if (drug != null)
 		{
+			// Customer gets a drug
 			ReceiveDrug(drug);
 			return;
 		}
@@ -62,7 +63,8 @@ public class CustomerManager : MonoBehaviour
 		Stamp stamp = interactWith.GetComponent<Stamp>();
 		if (stamp != null)
 		{
-			CommitSuicide();
+			// Customer is sent away
+			LeaveRoom();
 			stamp.has_ink = false;
 			Debug.Log("Used stamp on customer");
 		}
@@ -79,6 +81,7 @@ public class CustomerManager : MonoBehaviour
 			LeaveRoom();
 		}
 
+		// Destroy drug
 		Destroy(drug.gameObject);
 	}
 
