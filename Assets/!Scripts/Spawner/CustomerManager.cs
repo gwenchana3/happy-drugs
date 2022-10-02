@@ -2,33 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.VFX;
 
 public class CustomerManager : MonoBehaviour
 {
     public DrugType DemandedDrug;
+    public float WaitingTime;
 
+    private float _waitedTime;
     [HideInInspector]
     public DestinationPoint DestinationPoint;
-    [HideInInspector]
-    public Transform ExitPoint;
     private NavMeshAgent _navAgent;
-    private bool _leaving;
+    private ParticleSystem _particleSystem;
+    private VisualEffect _visualEffect;
 
     private void Awake()
     {
         _navAgent = GetComponentInChildren<NavMeshAgent>();
+        _visualEffect = GetComponent<VisualEffect>();
+        _particleSystem = GetComponent<ParticleSystem>();
     }
 
     private void Start()
     {
+        _waitedTime = Time.time;
         EnterRoom();
     }
 
     private void Update()
     {
-        if (_leaving && !_navAgent.hasPath)
-            Destroy(this.gameObject);
+        if(!_navAgent.hasPath)
+        {
+            Vector3 dir = Camera.main.transform.position - transform.position;
+            dir.y = 0;
+            transform.rotation = Quaternion.LookRotation(dir);
+        }
+
+        if (_waitedTime + WaitingTime <= Time.time)
+        {
+            CommitSuicide();
+        }
     }
+
 
     public void ReceiveDrug(Drug drug)
     {
@@ -51,9 +66,21 @@ public class CustomerManager : MonoBehaviour
 
     public void LeaveRoom()
     {
-        _navAgent.SetDestination(ExitPoint.position);
         DestinationPoint.IsOccupied = false;
-        _leaving = true;
+        StartCoroutine(PlayParticles());
+        Destroy(gameObject);
+    }
+
+    IEnumerator PlayParticles()
+    {
+        _particleSystem.Play();
+        yield return new WaitForSeconds(1.5f);
+    }
+
+    IEnumerator PlayVisualEffect()
+    {
+        _visualEffect.Play();
+        yield return new WaitForSeconds(1.5f);
     }
     
     public void CommitSuicide()

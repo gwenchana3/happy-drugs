@@ -24,7 +24,6 @@ public class SpawnController : MonoBehaviour
 
     public CustomerManager[] CustomerTemplates;
     public DestinationPoint[] Destinations;
-    public Transform ExitPoint;
 
     private System.Random _random = new System.Random();
     private float _lastTime;
@@ -42,7 +41,6 @@ public class SpawnController : MonoBehaviour
 
         try { thisCustomer.DestinationPoint = Destinations.First(o => o.IsOccupied == false); }
         catch { Destroy(thisCustomer.gameObject); return; }
-        thisCustomer.ExitPoint = ExitPoint;
         thisCustomer.EnterRoom();
     }
 
