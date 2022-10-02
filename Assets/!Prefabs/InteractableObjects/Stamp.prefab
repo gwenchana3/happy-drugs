@@ -17,6 +17,11 @@ PrefabInstance:
       propertyPath: <interactable>k__BackingField
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2810954446951149153, guid: 3f432be6d3f589f38840f6f7485f0a07,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 29bc648b1bba04c2dbb0740bbc90cff8, type: 2}
     - target: {fileID: 2810954446951149154, guid: 3f432be6d3f589f38840f6f7485f0a07,
         type: 3}
       propertyPath: m_Name
