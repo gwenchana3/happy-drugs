@@ -6,107 +6,111 @@ using UnityEngine.SceneManagement;
 
 public class SpawnController : MonoBehaviour
 {
-    private static SpawnController _instance;
+	private static SpawnController _instance;
 
-    public SpawnType SpawnMode;
+	public SpawnType SpawnMode;
 
-    public int SpawnAmmount;
+	public int SpawnAmmount;
 
-    public int GameHP;
+	public int GameHP;
 
-    [HideInInspector]
-    public int SpawnCounter;
+	[HideInInspector]
+	public int SpawnCounter;
 
-    private TimeController _timeController;
+	private TimeController _timeController;
 
-    public static SpawnController Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = GameObject.FindObjectOfType<SpawnController>();
-            }
+	[SerializeField]
+	Animator _camAnimator = null;
 
-            return _instance;
-        }
-    }
+	public static SpawnController Instance
+	{
+		get
+		{
+			if (_instance == null)
+			{
+				_instance = GameObject.FindObjectOfType<SpawnController>();
+			}
 
-    public CustomerManager[] CustomerTemplates;
-    public DestinationPoint[] Destinations;
+			return _instance;
+		}
+	}
 
-    private System.Random _random = new System.Random();
-    private float _lastTime;
-    public float SpawnTime;
+	public CustomerManager[] CustomerTemplates;
+	public DestinationPoint[] Destinations;
 
-    private void Awake()
-    {
-        _lastTime = Time.time - SpawnTime;
-        
-    }
+	private System.Random _random = new System.Random();
+	private float _lastTime;
+	public float SpawnTime;
 
-    private void Start()
-    {
-        _timeController = Manager.Use<PlayManager>().TimeController;
-    }
+	private void Awake()
+	{
+		_lastTime = Time.time - SpawnTime;
 
-    public void Spawn()
-    {
-        CustomerManager thisCustomer = Instantiate(CustomerTemplates[_random.Next(0, CustomerTemplates.Length)], 
-            transform.position, transform.rotation);
+	}
 
-        try { thisCustomer.DestinationPoint = Destinations.First(o => o.IsOccupied == false); }
-        catch { Destroy(thisCustomer.gameObject); return; }
-        thisCustomer.EnterRoom();
-        SpawnCounter += 1;
-        _timeController.UpdateUI();
-    }
+	private void Start()
+	{
+		_timeController = Manager.Use<PlayManager>().TimeController;
+	}
 
-    public void DecreaseHP(int ammount)
-    {
-        GameHP -= ammount;
-    }
+	public void Spawn()
+	{
+		CustomerManager thisCustomer = Instantiate(CustomerTemplates[_random.Next(0, CustomerTemplates.Length)],
+			transform.position, transform.rotation);
 
-    private void EndGame(bool isWin)
-    {
-        switch(isWin)
-        {
-            case true:
-                SceneManager.LoadScene("WinScreenScene");
-                return;
-            case false:
-                SceneManager.LoadScene("LoseSceneScreen");
-                return;
-        }
-    }
+		try { thisCustomer.DestinationPoint = Destinations.First(o => o.IsOccupied == false); }
+		catch { Destroy(thisCustomer.gameObject); return; }
+		thisCustomer.EnterRoom();
+		SpawnCounter += 1;
+		_timeController.UpdateUI();
+	}
 
-    public void Update()
-    {
-        if (SpawnAmmount >= SpawnCounter)
-        {
-            switch (SpawnMode)
-            {
-                case SpawnType.OneAtATime:
-                    if (!FindObjectOfType<CustomerManager>())
-                        Spawn();
-                    break;
-                case SpawnType.TimedSpawn:
-                    if (Time.time >= _lastTime + SpawnTime)
-                    {
-                        Spawn();
-                        _lastTime = Time.time;
-                    }
-                    break;
-            }
-        }
-        else if(!FindObjectOfType<CustomerManager>())
-        {
-            EndGame(true);
-        }
+	public void DecreaseHP(int ammount)
+	{
+		GameHP -= ammount;
+		_camAnimator.SetTrigger("Shake");
+	}
 
-        if(GameHP <= 1)
-        {
-            EndGame(false);
-        }
-    }
+	private void EndGame(bool isWin)
+	{
+		switch (isWin)
+		{
+			case true:
+				SceneManager.LoadScene("WinScreenScene");
+				return;
+			case false:
+				SceneManager.LoadScene("LoseSceneScreen");
+				return;
+		}
+	}
+
+	public void Update()
+	{
+		if (SpawnAmmount >= SpawnCounter)
+		{
+			switch (SpawnMode)
+			{
+				case SpawnType.OneAtATime:
+					if (!FindObjectOfType<CustomerManager>())
+						Spawn();
+					break;
+				case SpawnType.TimedSpawn:
+					if (Time.time >= _lastTime + SpawnTime)
+					{
+						Spawn();
+						_lastTime = Time.time;
+					}
+					break;
+			}
+		}
+		else if (!FindObjectOfType<CustomerManager>())
+		{
+			EndGame(true);
+		}
+
+		if (GameHP <= 1)
+		{
+			EndGame(false);
+		}
+	}
 }
