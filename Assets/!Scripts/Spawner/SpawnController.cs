@@ -12,9 +12,12 @@ public class SpawnController : MonoBehaviour
 
     public int SpawnAmmount;
 
-    public int GameHP { get; private set; }
+    public int GameHP;
 
-    private int _spawnCounter;
+    [HideInInspector]
+    public int SpawnCounter;
+
+    private TimeController _timeController;
 
     public static SpawnController Instance
     {
@@ -39,6 +42,12 @@ public class SpawnController : MonoBehaviour
     private void Awake()
     {
         _lastTime = Time.time - SpawnTime;
+        
+    }
+
+    private void Start()
+    {
+        _timeController = Manager.Use<PlayManager>().TimeController;
     }
 
     public void Spawn()
@@ -49,6 +58,8 @@ public class SpawnController : MonoBehaviour
         try { thisCustomer.DestinationPoint = Destinations.First(o => o.IsOccupied == false); }
         catch { Destroy(thisCustomer.gameObject); return; }
         thisCustomer.EnterRoom();
+        SpawnCounter += 1;
+        _timeController.UpdateUI();
     }
 
     public void DecreaseHP(int ammount)
@@ -71,7 +82,7 @@ public class SpawnController : MonoBehaviour
 
     public void Update()
     {
-        if (SpawnAmmount >= _spawnCounter)
+        if (SpawnAmmount >= SpawnCounter)
         {
             switch (SpawnMode)
             {

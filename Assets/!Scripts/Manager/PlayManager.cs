@@ -5,4 +5,5 @@ using UnityEngine;
 public class PlayManager : ManagerModule
 {
     public SpawnController Spawner;
+    public TimeController TimeController;
 }
