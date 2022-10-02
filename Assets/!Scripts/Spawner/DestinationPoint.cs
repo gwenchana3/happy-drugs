@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DestinationPoint : MonoBehaviour
 {
-    [HideInInspector]
-    public bool IsOccupied;
+	[HideInInspector]
+	public bool IsOccupied;
+
+	public Transform ObjectSpawnPoint;
 }
