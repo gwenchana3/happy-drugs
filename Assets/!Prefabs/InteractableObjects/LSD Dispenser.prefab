@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <drugType>k__BackingField: 0
   _drug: {fileID: 5804234846744394559, guid: 7189cee723d0adbf6841ce409aeaeb68, type: 3}
-  spawnOffset: {x: 0, y: 0.2, z: 0}
+  spawnOffset: {x: 0, y: 0.16, z: 0}
 --- !u!4 &1881705957768109690 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2810954446951149167, guid: 3f432be6d3f589f38840f6f7485f0a07,
