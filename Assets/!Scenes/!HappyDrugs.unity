@@ -1113,7 +1113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 286500500}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.037, z: 0}
+  m_LocalPosition: {x: 0, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1153,7 +1153,7 @@ MonoBehaviour:
   <_fireBufferTimer>k__BackingField: 0.1
   <_dragLayers>k__BackingField:
     serializedVersion: 2
-    m_Bits: 704
+    m_Bits: 960
 --- !u!4 &288613586
 Transform:
   m_ObjectHideFlags: 0

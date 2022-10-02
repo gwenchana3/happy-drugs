@@ -160,7 +160,11 @@ public class CustomerManager : MonoBehaviour
 		DestinationPoint.IsOccupied = false;
 		if (_instantiatedObject != null)
 		{
-			Destroy(_instantiatedObject);
+			Money money = _instantiatedObject.GetComponent<Money>();
+			if (money == null)
+			{
+				Destroy(_instantiatedObject);
+			}
 		}
 	}
 }
