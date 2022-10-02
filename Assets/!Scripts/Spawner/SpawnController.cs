@@ -108,7 +108,7 @@ public class SpawnController : MonoBehaviour
 			EndGame(true);
 		}
 
-		if (GameHP <= 1)
+		if (GameHP <= 0)
 		{
 			EndGame(false);
 		}

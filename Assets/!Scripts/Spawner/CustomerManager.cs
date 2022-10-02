@@ -116,13 +116,16 @@ public class CustomerManager : MonoBehaviour
 
 	public void ReceiveDrug(Drug drug)
 	{
-		if (!_isTrustworthy || drug.drugType != DemandedDrug)
+		if (!_goingDownTheSuislide)
 		{
-			CommitSuicide();
-		}
-		else
-		{
-			LeaveRoom();
+			if (!_isTrustworthy || drug.drugType != DemandedDrug)
+			{
+				CommitSuicide();
+			}
+			else
+			{
+				LeaveRoom();
+			}
 		}
 	}
 
