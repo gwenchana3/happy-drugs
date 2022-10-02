@@ -91,6 +91,8 @@ MonoBehaviour:
   <_smoothTime>k__BackingField: 0.1
   sounds:
   - {fileID: 8300000, guid: 68bc98b4b52953b2facdbd51659aabb7, type: 3}
+  - {fileID: 8300000, guid: 8deb7fc49ae03022ba35aa8ee7cf7da2, type: 3}
+  - {fileID: 8300000, guid: 6c19ff9ecc3448c48baf2bd5d8563995, type: 3}
 --- !u!65 &2810954446951149164
 BoxCollider:
   m_ObjectHideFlags: 0
