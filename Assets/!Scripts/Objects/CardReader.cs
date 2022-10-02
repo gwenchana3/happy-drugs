@@ -27,7 +27,6 @@ class CardReader : MonoBehaviour
 		if (card != null && card.valid)
 		{
 			BeepPositive();
-			Debug.Log(card.balance);
 		}
 		else
 		{
@@ -37,7 +36,6 @@ class CardReader : MonoBehaviour
 
 	protected virtual void BeepPositive()
 	{
-		Debug.Log("Card is valid");
 		animator.SetTrigger("Valid");
 		audioSource.clip = _valid;
 		audioSource.Play();
@@ -45,7 +43,6 @@ class CardReader : MonoBehaviour
 
 	protected virtual void BeepNegative()
 	{
-		Debug.Log("Card is invalid");
 		animator.SetTrigger("Invalid");
 		audioSource.clip = _invalid;
 		audioSource.Play();

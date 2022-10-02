@@ -25,7 +25,6 @@ class CashRegister : MonoBehaviour
 				balance += money.balance;
 			}
 			Destroy(money.gameObject);
-			Debug.Log(balance);
 			audioSource.Play();
 		}
 	}
